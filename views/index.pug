@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title RSVP
+    body
+        h1 RSVP
+        form(action="/reply", method="post")
+            div
+                label(for="name") Name:
+                input(type="text", id="name", name="user_name")
+                br
+
+                label(for="email") Email:
+                input(type="text", id="email", name="user_email")
+                br
+
+                label(for="rsvp") RSVP
+                br
+                input(type="radio", name="user_rsvp", value="attending")
+                | I'll be there!
+                br
+                input(type="radio", name="user_rsvp", value="not_attending")
+                | I can't make it!
+                br
+
+                select(name='number_of_guests')
+                    option(value='1', selected= true) 1
+                    option(value='2') 2
+                    option(value='3') 3
+                    option(value='4') 4
+                    option(value='5') 5
+                    option(value='6') 6
+                    option(value='7') 7
+                    option(value='8') 8
+                br
+                button(type="submit") Submit
