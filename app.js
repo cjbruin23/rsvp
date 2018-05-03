@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = 3000;
 mongoose.connect('mongodb://localhost/rsvp');
 
 app.set('views', './views');
@@ -68,4 +67,4 @@ app.get('/guests', (req, res) => {
     });  
 })
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(process.env.PORT || 5000), () => console.log('Example app listening on port 3000!'))
