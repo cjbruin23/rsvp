@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}));
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-    console.log('hello from database');
+    console.log('hello from the database');
 });
 
 const rsvpSchema = mongoose.Schema({
@@ -65,8 +65,7 @@ app.get('/guests', (req, res) => {
         res.render('guests', {
             attendList: attendNames
         });
-      });
-      
+    });  
 })
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
